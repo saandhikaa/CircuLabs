@@ -22,7 +22,7 @@ String ssid = "yourNetwork";
 String password = "secretPassword";
 
 String server = "yourServer.com";
-String path = "/verifying.php";  // optional
+String path = "/collecting.php";
 
 //////////////////////////////////////////////////////////////////////////
 
@@ -160,7 +160,7 @@ void connectWifi() {
 }
 
 void httppost (String value[2]) {
-  String content = "groups=" + value[0] + "&rhesus=" + value[1];
+  String content = "from=arduino&direct=yes&groups=" + value[0] + "&rhesus=" + value[1];
   
   esp.println("AT+CIPSTART=\"TCP\",\"" + server + "\",80");
   

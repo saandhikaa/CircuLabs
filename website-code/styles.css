@@ -1,0 +1,450 @@
+body{
+    margin: 0;
+    padding: 0;
+    background-color: white;
+}
+
+.container{
+    width: 100%;
+    display: grid;
+
+    grid-template: 
+        [H1] 'header header' 150px
+        [H2] 'content sidebar' min-content
+        [H3] 'footer footer' min-content
+        [H4] / [V1] 1fr [V2] 300px [V3];
+}
+
+
+.header{
+    grid-area: header;
+    background: linear-gradient(300deg, #50D5B7, #00A083);
+    
+    width: 100%;
+    box-sizing: border-box;
+
+    justify-content: center;
+    text-align: center;
+    font-size: 30px;
+    font-family: 'Signika', sans-serif;
+}
+
+
+.content{
+    grid-area: content;
+    background-color: white;
+    
+    width: 100%;
+    box-sizing: border-box;
+
+    padding: 30px 0;
+}
+
+.card{
+    font-family: 'Montserrat', sans-serif;
+    position: relative;
+    margin-bottom: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
+    min-width: 650px;
+    background-color: rgb(241, 241, 241);
+    border-radius: 10px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.card h1{
+    padding-left: 10.8%;
+}
+
+.card .mytable{
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
+    background-color: rgb(241, 241, 241);
+    border-radius: 0px;
+}
+
+.card table{
+    border-collapse: collapse;
+    min-width: 100%;
+}
+
+.card .mytable thead tr{
+    border-bottom: 2px solid #067D68;
+    text-align: left;
+}
+
+.card .mytable th{
+    padding: 12px 10px;
+}
+
+.card .mytable td{
+    padding: 8px 10px;
+}
+
+.card tbody .space td{
+    padding:0;
+    height: 15px;
+}
+
+.card tbody .selected{
+    background-color: rgb(212, 212, 212);
+    color: #067D68;
+    font-weight: 700;
+}
+
+.card tbody .endline{
+    border-bottom: 2px solid #067D68;
+}
+
+.card .opt{
+    text-align: center;
+}
+
+.card a{
+    padding: 5px;
+    align-items: center;
+}
+
+.card .mytable input[type="submit"]{
+    width: 80px;
+    height: 30px;
+    margin: 0;
+    border: 2px solid rgb(241, 241, 241);
+    font-size: 16px;
+    font-weight: 700;
+    border-radius: 5px;
+    cursor: pointer;
+    outline: none;
+    color: white;
+}
+
+.card a .detail{
+    border: 2px solid rgb(241, 241, 241);
+    background: #067D68;
+    font-size: 16px;
+    transition: .3s;
+}
+.card a .detail:hover{
+    border: 2px solid #067D68;
+    transition: .3s;
+}
+
+.card a .simpan{
+    background-color: #00B649;
+    transition: .3s;
+}
+.card a .simpan:hover{
+    border-color: #00B649;
+    transition: .3s;
+}
+
+.card a .hapus{
+    background-color: #FF002C;
+    transition: .3s;
+}
+.card a .hapus:hover{
+    border-color: #FF002C;
+    transition: .3s;
+}
+
+
+
+.card .pagging{
+    display: flex;
+    justify-content: center;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
+    height: 60px;
+    background-color: rgb(241, 241, 241);
+}
+
+.card .pagging a{
+    padding: 5px;
+}
+
+.card .pagging input{
+    cursor: pointer;
+    outline: none;
+    margin-top: 10px;
+    height: 30px;
+    width: 30px;
+    font-weight: 700;
+    font-size: 16px;
+    border-radius: 5px;
+    transition: .3s;
+}
+.card .pagging input:hover{
+    cursor: pointer;
+    outline: none;
+    margin-top: 5px;
+    height: 40px;
+    width: 40px;
+    font-weight: 700;
+    font-size: 20px;
+    border-radius: 7px;
+    transition: .3s;
+}
+
+.card .pagging .page{
+    border: 2px solid #067D68;
+    background-color: rgb(241, 241, 241);
+    color: #067D68;
+}
+.card .pagging .spage{
+    border: none;
+    background-color: #067D68;
+    color: white;
+}
+
+
+
+
+
+.sidebar{
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    grid-area: sidebar;
+    
+    width: 100%;
+    box-sizing: border-box;
+
+    background-color: white;
+}
+
+.users{
+    position: relative;
+    top: 10px;
+    left: 48%;
+    transform: translatex(-50%);
+    width: 260px;
+    background-color: rgb(241, 241, 241);
+    border-radius: 10px;
+}
+
+.users h2{
+    text-align: center;
+    padding: 20px;
+    border-bottom: 1px solid silver;
+    pointer-events: none;
+}
+
+.users label{
+    position: relative;
+    left: 40px;
+    color: #067D68;
+    font-size: 16px;
+    pointer-events: none;
+    font-weight: bold;
+}
+
+.users .menu-show {
+    position: relative;
+    padding-left: 17.5%;
+    width: 65%;
+}
+
+.users .menu-show input{
+    border-radius: 5px;
+    border: 0;
+    width: 100%;
+    margin-top: 1px;
+    padding: 5px 10px;
+    background-color: transparent;
+    color: #067D68;
+    font-size: 15px;
+    text-align: left;
+}
+
+.users .menu-show input:hover{
+    cursor: pointer;
+    color: white;
+    background-color: #067D68;
+    transition: .3s;
+}
+
+.users .link{
+    padding-bottom: 8px;
+}
+
+.users .link a input[type="submit"]{
+    position: relative;
+    left: 15%;
+    width: 70%;
+    height: 35px;
+    border: 2px solid rgb(241, 241, 241);
+    background: #067D68;
+    border-radius: 8px;
+    font-weight: 700;
+    color: white;
+    cursor: pointer;
+    outline: none;
+}
+
+.users .link a input[type="submit"]{
+    background-color: #067D68;
+    transition: .3s;
+}
+.users .link a input[type="submit"]:hover{
+    border-color: #067D68;
+    transition: .3s;
+}
+
+
+
+
+.details{
+    position: relative;
+    top: 10px;
+    left: 48%;
+    transform: translate(-50%, 0);
+    width: 260px;
+    background-color: rgb(241, 241, 241);
+    border-radius: 10px;
+}
+
+.details h2{
+    text-align: center;
+    padding: 20px;
+    border-bottom: 1px solid silver;
+    pointer-events: none;
+}
+
+.details .detailbox{
+    position: relative;
+    padding: 0 40px;
+}
+
+.details label{
+    font-weight: 700;
+}
+
+.details p{
+    transform: translate(10px, -10px);
+}
+
+.details .exit{
+    background-color: black;
+    position: relative;
+    top: 18px;
+    left: 40%;
+}
+
+.details .exit input[type="submit"]{
+    color: #067D68;
+    position:absolute;
+    text-align: center;
+    font-weight: 500;
+    font-size: 16px;
+    height: 35px;
+    width: 35px;
+    cursor: pointer;
+    outline: none;
+    border: none;
+    background: none;
+    transition: .3s;
+}
+
+.details .exit input[type="submit"]:hover{
+    font-weight: 700;
+    color: #FF002C;
+    font-size: 20px;
+    transition: .3s;
+}
+
+.details .link{
+    padding: 5px 0;
+}
+
+.details a input[type="submit"]{
+    left: 50%;
+    transform: translateX(-50%);
+    position: relative;
+    width: 70%;
+    height: 35px;
+    border: 2px solid rgb(241, 241, 241);
+    border-radius: 8px;
+    font-weight: 700;
+    color: white;
+    cursor: pointer;
+    outline: none;
+}
+
+.details a .edit{
+    background-color: #00B649;
+    transition: .3s;
+}
+.details a .edit:hover{
+    border-color: #00B649;
+    transition: .3s;
+}
+
+.details a .hapus{
+    background-color: #FF002C;
+    transition: .3s;
+}
+.details a .hapus:hover{
+    border-color: #FF002C;
+    transition: .3s;
+}
+
+
+
+
+.footer{
+    grid-area: footer;
+    /* background-color: rgb(63, 63, 63); */
+    
+    width: 100%;
+    box-sizing: border-box;
+
+    padding-top: 0;
+}
+
+.footer .endline{
+    border-top: 1px solid silver;
+    opacity: 60%;
+    width: 90%;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-bottom: 25px;
+}
+
+.footer .menu{
+    display: flex;
+    justify-content: center;
+}
+
+.footer .menu a{
+    margin: 0 10px;
+}
+
+.footer .menu input{
+    border: 0;
+    background-color: white;
+    color: black;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.footer .menu input:hover{
+    cursor: pointer;
+    color: #067D68;
+    transition: .3s;
+}
+
+.footer .copyright{
+    text-align: center;
+    margin: 30px 0 20px;
+    color: grey;
+    font-family: Helvetica, sans-serif;
+    font-size: 12px;
+}
